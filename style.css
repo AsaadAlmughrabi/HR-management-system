@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+*{
+    font-family: "Titillium Web", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+header{
+    background-color:#cac2c2;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px;
+}
+.logo{
+    text-decoration: none;
+    color: #633e78;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+.navigation a{
+color: #633e78;
+text-decoration: none;
+font-size: 1.1em;
+font-weight: 500;
+padding-left: 30px;
+}
+.navigation a:hover{
+color: #ffffff;
+}
+.navigation a:visited{
+    color: #2b2a2a;
+    }
+
+section{
+    padding: 100px 200px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+footer {
+    background-color:#cac2c2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  footer ul li {
+    display: inline;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  footer ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color: #633e78;
+  }
+  
+  .social-media {
+    display: inline-block;
+  }
+  
+  .social-media a {
+    color: #633e78;
+    font-size: 24px;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .fab:hover {
+    transform: scale(1.2);
+  }
