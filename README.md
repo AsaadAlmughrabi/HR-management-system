@@ -1,1 +1,3 @@
 # HR-management-system
+### create index.html and accounting.html and add some style to each page
+#### create app.js and render the employee name and salary
