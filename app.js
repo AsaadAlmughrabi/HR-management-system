@@ -1,16 +1,22 @@
 'use strict';
 
+let allEmployees=[];
 
+let formElement = document.getElementById("form")
 function Employee( fullName, department, level, imageURl){
-
     this.employeeId=0;
     this.fullName=fullName;
     this.salary=1;
     this.department=department;
     this.level=level;
     this.imageURl=imageURl;
+    allEmployees.push(this);
+    
+
     
 }; 
+
+
 Employee.prototype.claculateSalary=function(){
     let max;
     let min;
@@ -46,9 +52,11 @@ Employee.prototype.renderEmployee = function(){
 
     const icon = document.createElement('div');
     icon.className = 'icon';
+    
 
     const img = document.createElement('img');
     img.src = this.imageURl;
+    img.style.borderRadius="30px";
     icon.appendChild(img);
     card.appendChild(icon);
 
@@ -79,12 +87,38 @@ Employee.prototype.renderEmployee = function(){
 
     const employeesSection = document.getElementById('employees');
     employeesSection.appendChild(card);
+    
+}
+
+function saveEmp(employees){
+    let strArr=JSON.stringify(employees);
+   localStorage.setItem("employees",strArr);
+   
+}
+
+function getData(){
+    let retriveData=localStorage.getItem("employees");
+   let objArr=JSON.parse(retriveData);
+   for(let i=0;i<objArr.length;i++){
+
+    new Employee(objArr[i].fullName,objArr[i].department,objArr[i].level,objArr[i].image);
+
+
+   }
+   renderAll();
 }
 
 
 
 
-let formElement = document.getElementById("form")
+function renderAll(){
+    for(let i=0;i<allEmployees.length;i++){
+        allEmployees[i].generanteEmpId();
+        allEmployees[i].claculateSalary();
+        allEmployees[i].renderEmployee();
+    }
+}
+
  formElement.addEventListener("submit", submitHandler);
  formElement.addEventListener("submit", messageEvent);
 
@@ -99,8 +133,15 @@ function submitHandler(event){
     this.salary=newEmployee.claculateSalary();
     this.employeeId=newEmployee.generanteEmpId();
     newEmployee.renderEmployee();
+    saveEmp(allEmployees);
+
 }
 function messageEvent(event){
-    let fullName=event.target.Fname.value;
-    alert(` Hello ${fullName} You are Added Successfully`);
+    let fullName=document.getElementById("Fname");
+    alert(` Hello ${fullName.value} You are Added Successfully`);
 }
+getData();
+
+
+
+
