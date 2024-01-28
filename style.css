@@ -203,4 +203,35 @@ input[type="submit"]:hover {
 .footer .social-icons a{
   font-size: 1.3em;
   padding-right: 12px;
+
+
+
 }
+
+
+@media screen and (min-width: 768px) {
+  header {
+    padding: 10px 200px; /* Reset padding for larger viewports */
+  }
+
+  .logo {
+    font-size: 1.8em; /* Reset font size for larger viewports */
+  }
+
+  .navigation a {
+    font-size: 1.1em; /* Reset font size for larger viewports */
+    padding-left: 30px;
+  }
+}
+
+section {
+  padding: 50px; /* Adjusted padding for smaller viewports */
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 100px 200px; /* Reset padding for larger viewports */
+  }
+}
+
+/* Add more media queries and adjustments as needed for other elements */
